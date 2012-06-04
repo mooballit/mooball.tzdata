@@ -1,7 +1,7 @@
 SRCRPMURL  = http://vault.centos.org/6.2/os/Source/SPackages/tzdata-2011l-4.el6.src.rpm
 RPMNAME    = $(shell basename $(SRCRPMURL))
 RPMINSTALL = unp
-RPMBUILD   = rpmbuild --define '_topdir '`pwd`
+RPMBUILD   = rpmbuild --define '_topdir '`pwd` -ba $(BFLAGS)
 
 
 BUILDENV = \
@@ -41,7 +41,7 @@ $(BUILDENV):
 		mkdir -p $@;
 
 RPMS/noarch/*.rpm:
-		$(RPMBUILD) -ba SPECS/tzdata.spec;
+		$(RPMBUILD) SPECS/tzdata.spec;
 
 
 .PHONY: clean
