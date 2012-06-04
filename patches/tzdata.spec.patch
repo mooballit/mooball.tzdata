@@ -1,0 +1,29 @@
+--- tzdata.spec	2012-06-04 12:00:28.913227764 +1000
++++ tzdata.spec_patched	2012-06-04 12:02:14.193231398 +1000
+@@ -20,6 +20,8 @@
+ Patch1: tzdata-2011l-kemerovo.patch
+ Patch2: tzdata-2011l-brazil.patch
+ Patch3: tzdata-2011j-ukraine.patch
++Patch4: australia-names.diff
++Patch5: tst-timezone.patch
+ # __end
+ 
+ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+@@ -31,7 +33,7 @@
+ 
+ %description
+ This package contains data files with rules for various timezones around
+-the world.
++the world. It was patched to use AEST and AEDT instead of EST/EDT.
+ 
+ %package java
+ Summary: Timezone data for Java
+@@ -56,6 +58,8 @@
+ %patch1 -p0
+ %patch2 -p0
+ %patch3 -p0
++%patch4 -p1 -d tzdata%{tzdata_version}
++%patch5 -p0 -d src
+ # __end
+ 
+ mkdir javazic
