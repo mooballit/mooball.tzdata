@@ -22,17 +22,14 @@ SPECPATCH = \
 all: SPECS/tzdata.spec RPMS/noarch/*.rpm
 		echo "Done"
 
-
 SOURCES/*.*: $(BUILDENV) $(RPMNAME)
 		$(RPMINSTALL) $(RPMNAME);
 		mv *.patch *.tar.* SOURCES;
 		mv *.spec SPECS;
 		cp $(TZDATAPATCHES) SOURCES;
 
-
 SPECS/tzdata.spec: SOURCES/*.*
 		cat $(SPECPATCH) | patch -p0 -d SPECS;
-
 
 $(RPMNAME):
 		wget $(SRCRPMURL);
