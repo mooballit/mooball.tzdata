@@ -1,0 +1,16 @@
+This package allows you to create a custom, patched version of tzdata
+with corrected australian timezone names:
+
+    http://tedp.id.au/tzdata-au/
+
+THE URL to the SRPM is configured in the Makefile. You will need to
+change it if you want to rebuild the RPM for a different SRPM. This may
+also mean that you will need to change the additional patches for the
+tzdata tests and the tzdata.spec file.
+
+Additional Build Flags
+======================
+
+    BFLAGS:
+        Additional build flags can be set with the BFLAGS environment
+        variable, e.g. BFLAGS='-ba --nodeps' make
