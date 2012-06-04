@@ -12,15 +12,16 @@ BUILDENV = \
 					 SRPMS
 
 TZDATAPATCHES = \
-								australia-names.diff	\
-								tst-timezone.patch
+								patches/australia-names.diff	\
+								patches/tst-timezone.patch
 
 SPECPATCH = \
-						tzdata.spec.patch
+						patches/tzdata.spec.patch
 
 
-srcrpm: environment
+tzpackage.mk: environment.mk
 		wget $(SRCRPMURL);
+		touch $@;
 		$(RPMINSTALL) $(RPMNAME);
 		mv *.patch *.tar.* SOURCES;
 		mv *.spec SPECS;
@@ -28,15 +29,18 @@ srcrpm: environment
 		cat $(SPECPATCH) | patch -p0 -d SPECS;
 
 
-environment:
+environment.mk:
 		for dir in $(BUILDENV); do \
 				mkdir -p $$dir;\
 		done;\
+		touch $@;
 
 
-all: environment srcrpm
+all: %.mk
+		$(RPMBUILD) -ba SPECS/tzdata.spec;
 		echo "Done"
 
 clean:
 		rm -rf $(BUILDENV)
 		rm -f $(RPMNAME)
+		rm -f *.mk
