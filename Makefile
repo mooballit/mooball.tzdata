@@ -1,3 +1,10 @@
+# Makefile to patch and create an RPM.
+# Theory: Update the SRCRPMURL to a new tzdata or anything else in this
+# package (e.g. the patches), push it to issue a rebuild of the tzdata
+# package.
+#
+# This Makefile is only written for Debian. It may not work on any other
+# OS.
 SRCRPMURL  = http://vault.centos.org/6.2/os/Source/SPackages/tzdata-2011l-4.el6.src.rpm
 RPMNAME    = $(shell basename $(SRCRPMURL))
 RPMINSTALL = unp
