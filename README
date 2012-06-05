@@ -1,5 +1,6 @@
 This package allows you to create a custom, patched version of tzdata
-with corrected australian timezone names:
+with corrected australian timezone names. The patch applied is from Ted
+Percival:
 
     http://tedp.id.au/tzdata-au/
 

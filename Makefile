@@ -1,3 +1,6 @@
+# Copyright (c) 2012 Mooball IT
+# See also LICENSE.txt
+#
 # Makefile to patch and create an RPM.
 # Theory: Update the SRCRPMURL to a new tzdata or anything else in this
 # package (e.g. the patches), push it to issue a rebuild of the tzdata
