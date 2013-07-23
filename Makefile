@@ -8,7 +8,7 @@
 #
 # This Makefile is only written for Debian. It may not work on any other
 # OS.
-SRCRPMURL  = http://vault.centos.org/6.2/os/Source/SPackages/tzdata-2011l-4.el6.src.rpm
+SRCRPMURL  = http://vault.centos.org/6.4/updates/Source/SPackages/tzdata-2013b-1.el6.src.rpm
 RPMNAME    = $(shell basename $(SRCRPMURL))
 RPMINSTALL = unp
 RPMBUILD   = rpmbuild --define '_topdir '`pwd` -ba $(BFLAGS)
@@ -22,8 +22,7 @@ BUILDENV = \
 					 SRPMS
 
 TZDATAPATCHES = \
-								patches/australia-names.diff	\
-								patches/tst-timezone.patch
+								patches/australia-names.diff
 
 SPECPATCH = \
 						patches/tzdata.spec.patch
@@ -33,7 +32,7 @@ all: SPECS/tzdata.spec RPMS/noarch/*.rpm
 		echo "Done"
 
 SOURCES/*.*: $(BUILDENV) $(RPMNAME)
-		$(RPMINSTALL) $(RPMNAME);
+		rpm2cpio $(RPMNAME) | cpio -idmv;
 		mv *.patch *.tar.* SOURCES;
 		mv *.spec SPECS;
 		cp $(TZDATAPATCHES) SOURCES;

@@ -13,7 +13,7 @@ diff --git a/australasia b/australasia
 index 57e8335..e7d6d2c 100644
 --- a/australasia
 +++ b/australasia
-@@ -14,13 +14,13 @@
+@@ -13,13 +13,13 @@
  # Please see the notes below for the controversy about "EST" versus "AEST" etc.
  
  # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S
@@ -34,7 +34,7 @@ index 57e8335..e7d6d2c 100644
  # Go with Whitman and the Australian National Standards Commission, which
  # says W Australia didn't use DST in 1943/1944.  Ignore Whitman's claim that
  # 1944/1945 was just like 1943/1944.
-@@ -28,26 +28,26 @@ Rule	Aus	1943	only	-	Oct	 3	2:00	1:00	-
+@@ -27,26 +27,26 @@ Rule	Aus	1943	only	-	Oct	 3	2:00	1:00	-
  # Zone	NAME		GMTOFF	RULES	FORMAT	[UNTIL]
  # Northern Territory
  Zone Australia/Darwin	 8:43:20 -	LMT	1895 Feb
@@ -76,7 +76,7 @@ index 57e8335..e7d6d2c 100644
  
  # Queensland
  #
-@@ -63,42 +63,42 @@ Zone Australia/Eucla	 8:35:28 -	LMT	1895 Dec
+@@ -62,42 +62,42 @@ Zone Australia/Eucla	 8:35:28 -	LMT	1895 Dec
  # so use Lindeman.
  #
  # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S
@@ -148,7 +148,7 @@ index 57e8335..e7d6d2c 100644
  
  # Tasmania
  #
-@@ -107,106 +107,106 @@ Zone Australia/Adelaide	9:14:20 -	LMT	1895 Feb
+@@ -106,106 +106,106 @@ Zone Australia/Adelaide	9:14:20 -	LMT	1895 Feb
  # says King Island didn't observe DST from WWII until late 1971.
  #
  # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S
