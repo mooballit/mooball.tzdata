@@ -1,9 +1,8 @@
 --- tzdata.spec	2012-06-04 12:00:28.913227764 +1000
 +++ tzdata.spec_patched	2012-06-04 12:02:14.193231398 +1000
-@@ -13,4 +13,6 @@
+@@ -13,4 +13,5 @@
  Patch1: tzdata-2011l-kemerovo.patch
 +Patch2: australia-names.diff
-+Patch3: tst-timezone.patch
  # __end
  
  BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -16,10 +15,9 @@
  
  %package java
  Summary: Timezone data for Java
-@@ -40,4 +42,6 @@
+@@ -40,4 +42,5 @@
  %patch1 -p1
-+%patch2 -p1 -d tzdata%{tzdata_version}
-+%patch3 -p0 -d src
++%patch2 -p1
  # __end
  
  mkdir javazic
