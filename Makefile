@@ -22,7 +22,8 @@ BUILDENV = \
 					 SRPMS
 
 TZDATAPATCHES = \
-								patches/australia-names.diff
+								patches/australia-names.diff	\
+								patches/tst-timezone.patch
 
 SPECPATCH = \
 						patches/tzdata.spec.patch
