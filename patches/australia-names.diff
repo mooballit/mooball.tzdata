@@ -1,5 +1,18 @@
---- australasia	2013-09-11 19:21:27.000000000 +1000
-+++ australasia_patched	2013-11-12 10:26:18.841319898 +1000
+Corrections to Australian timezone names:
+  EST -> AEST
+  CST -> ACST
+  CWST -> ACWST
+  WST -> AWST
+
+Uses 'D' instead of 'S' (eg. AEST/AEDT) for daylight saving time.
+
+See http://tedp.id.au/tzdata-au/ or contact
+Ted Percival <ted@midg3t.net> with enquiries.
+
+diff --git a/australasia b/australasia
+index 57e8335..e7d6d2c 100644
+--- a/australasia
++++ b/australasia
 @@ -13,13 +13,13 @@
  # Please see the notes below for the controversy about "EST" versus "AEST" etc.
  
@@ -21,7 +34,7 @@
  # Go with Whitman and the Australian National Standards Commission, which
  # says W Australia didn't use DST in 1943/1944.  Ignore Whitman's claim that
  # 1944/1945 was just like 1943/1944.
-@@ -27,26 +27,26 @@
+@@ -27,26 +27,26 @@ Rule	Aus	1943	only	-	Oct	 3	2:00	1:00	-
  # Zone	NAME		GMTOFF	RULES	FORMAT	[UNTIL]
  # Northern Territory
  Zone Australia/Darwin	 8:43:20 -	LMT	1895 Feb
@@ -63,7 +76,7 @@
  
  # Queensland
  #
-@@ -62,42 +62,42 @@
+@@ -62,42 +62,42 @@ Zone Australia/Eucla	 8:35:28 -	LMT	1895 Dec
  # so use Lindeman.
  #
  # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S
@@ -135,7 +148,7 @@
  
  # Tasmania
  #
-@@ -106,106 +106,106 @@
+@@ -106,106 +106,106 @@ Zone Australia/Adelaide	9:14:20 -	LMT	1895 Feb
  # says King Island didn't observe DST from WWII until late 1971.
  #
  # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S
@@ -319,7 +332,7 @@
  Zone Australia/Lord_Howe 10:36:20 -	LMT	1895 Feb
 -			10:00	-	EST	1981 Mar
 -			10:30	LH	LHST
-+			10:00	-	AEST	1981 Mar
++			10:00	-	ACST	1981 Mar
 +			10:30	LH	LH%sT
  
  # Australian miscellany
