@@ -27,3 +27,6 @@ For australia-names.diff it's a bit different. There is an outdated version at h
 The current australasia file is from tzdata-2013g-1.el6.src.rpm/tzdata2013g.tar.gz/
 
 Copy these new files into the repo and update Makefile so that SRCRPMURL refers to the version this is being updated for.
+Run
+> make
+Then see install.sh for how to install.
