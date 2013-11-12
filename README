@@ -15,3 +15,14 @@ Additional Build Flags
     BFLAGS:
         Additional build flags can be set with the BFLAGS environment
         variable, e.g. BFLAGS='-ba --nodeps' make
+
+What to do
+==========
+
+Download the source RPM and find the files that need to be patched (tzdata.spec and tzdataXXXXy/australasia) and make the necessary changes to them.
+For tzdata.spec this involves adding information about the patch to tzdataXXXXy/australasia (see patches/tzdata.spec.patch for an idea of what to change).
+For tzdataXXXXy/australasia this involves adding letters to differentiate between standard and daylight times and changing timezone names to what everything except Linux expects (see patches/australia-names.diff for an idea of what to change).
+Once you've made the changes, regenerate the diffs:
+> diff -u tzdata.spec tzdata.spec_patched > tzdata.spec.patch
+> diff -u australasia australasia_patched > australia-names.diff
+Copy these new files into the repo and update Makefile so that SRCRPMURL refers to the version this is being updated for.

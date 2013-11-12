@@ -8,7 +8,7 @@
 #
 # This Makefile is only written for Debian. It may not work on any other
 # OS.
-SRCRPMURL  = http://vault.centos.org/6.4/updates/Source/SPackages/tzdata-2013b-1.el6.src.rpm
+SRCRPMURL  = http://vault.centos.org/6.4/updates/Source/SPackages/tzdata-2013g-1.el6.src.rpm
 RPMNAME    = $(shell basename $(SRCRPMURL))
 RPMINSTALL = unp
 RPMBUILD   = rpmbuild --define '_topdir '`pwd` -ba $(BFLAGS)
