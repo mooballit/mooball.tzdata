@@ -1,18 +1,7 @@
-Corrections to Australian timezone names:
-  EST -> AEST
-  CST -> ACST
-  CWST -> ACWST
-  WST -> AWST
-
-Uses 'D' instead of 'S' (eg. AEST/AEDT) for daylight saving time.
-
-See http://tedp.id.au/tzdata-au/ or contact
-Ted Percival <ted@midg3t.net> with enquiries.
-
-diff --git a/australasia b/australasia
-index 57e8335..e7d6d2c 100644
---- a/australasia
-+++ b/australasia
+diff --git a/tzdata/australasia b/tzdata/australasia
+index 8685d00..fd3ef00 100644
+--- a/tzdata/australasia
++++ b/tzdata/australasia
 @@ -13,13 +13,13 @@
  # Please see the notes below for the controversy about "EST" versus "AEST" etc.
  
@@ -332,7 +321,7 @@ index 57e8335..e7d6d2c 100644
  Zone Australia/Lord_Howe 10:36:20 -	LMT	1895 Feb
 -			10:00	-	EST	1981 Mar
 -			10:30	LH	LHST
-+			10:00	-	ACST	1981 Mar
++			10:00	-	AEST	1981 Mar
 +			10:30	LH	LH%sT
  
  # Australian miscellany
